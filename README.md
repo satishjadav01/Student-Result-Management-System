@@ -123,7 +123,7 @@ student-result-management-system/
 
 ## Screenshots
 
-*Add screenshots of your application here*
+**Login Page** 
 <img width="1915" height="869" alt="Screenshot 2025-10-25 202803" src="https://github.com/user-attachments/assets/30d7afc8-2ac3-434f-af0b-89afc58665ac" />
 
 
