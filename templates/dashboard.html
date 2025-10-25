@@ -1,0 +1,331 @@
+{% extends "base.html" %}
+
+{% block title %}Premium Dashboard - Student Result Management System{% endblock %}
+
+{% block content %}
+{% if login_success %}
+<div id="login-notification" class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050;">
+    <i class="fas fa-check-circle me-2"></i>Login successful!
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
+
+<!-- Enhanced Hero Section -->
+<div class="dashboard-hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <i class="fas fa-crown me-3"></i>
+                Premium SRMS Dashboard
+            </h1>
+            <p class="hero-subtitle">Advanced Student Result Management</p>
+            <p class="hero-description">Experience the power of our premium analytics, interactive charts, and comprehensive management tools designed for educational excellence.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">{{ total_students }}</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{{ total_courses }}</div>
+                <div class="stat-label">Courses</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{{ total_results }}</div>
+                <div class="stat-label">Results</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid px-4 py-5">
+
+
+    <!-- Enhanced Statistics Cards -->
+    <div class="row g-4 mb-5">  
+        <div class="col-xl-3 col-lg-6">
+            <div class="stats-card premium-card students-card fade-in-up">
+                <div class="card-gradient-overlay"></div>
+                <div class="card-content">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="stats-info">
+                            <div class="stats-number">{{ total_students }}</div>
+                            <div class="stats-label">Total Students</div>
+                            <div class="stats-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="{{ url_for('students.list_students') }}" class="btn btn-outline-light">
+                            <i class="fas fa-eye me-1"></i>View All
+                        </a>
+                        <a href="{{ url_for('students.add_student') }}" class="btn btn-light">
+                            <i class="fas fa-plus me-1"></i>Add New
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6">
+            <div class="stats-card premium-card courses-card fade-in-up">
+                <div class="card-gradient-overlay"></div>
+                <div class="card-content">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="stats-info">
+                            <div class="stats-number">{{ total_courses }}</div>
+                            <div class="stats-label">Total Courses</div>
+                            <div class="stats-trend">
+                                <i class="fas fa-book-open"></i>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="{{ url_for('courses.list_courses') }}" class="btn btn-outline-light">
+                            <i class="fas fa-eye me-1"></i>View All
+                        </a>
+                        <a href="{{ url_for('courses.add_course') }}" class="btn btn-light">
+                            <i class="fas fa-plus me-1"></i>Add New
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6">
+            <div class="stats-card premium-card results-card fade-in-up">
+                <div class="card-gradient-overlay"></div>
+                <div class="card-content">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="stats-info">
+                            <div class="stats-number">{{ total_results }}</div>
+                            <div class="stats-label">Total Results</div>
+                            <div class="stats-trend">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Processed</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="{{ url_for('results.list_results') }}" class="btn btn-outline-light">
+                            <i class="fas fa-eye me-1"></i>View All
+                        </a>
+                        <a href="{{ url_for('results.add_result') }}" class="btn btn-light">
+                            <i class="fas fa-plus me-1"></i>Add New
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6">
+            <div class="stats-card premium-card premium-extra-card fade-in-up">
+                <div class="card-gradient-overlay"></div>
+                <div class="card-content">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="stats-info">
+                            <div class="stats-number">98%</div>
+                            <div class="stats-label">Success Rate</div>
+                            <div class="stats-trend">
+                                <i class="fas fa-trophy"></i>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="{{ url_for('results.list_results') }}" class="btn btn-outline-light">
+                            <i class="fas fa-chart-pie me-1"></i>Analytics
+                        </a>
+                        <a href="#" class="btn btn-light">
+                            <i class="fas fa-download me-1"></i>Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="premium-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        <i class="fas fa-rocket me-2"></i>
+                        Quick Actions
+                    </h3>
+                    <p class="section-subtitle">Powerful tools at your fingertips</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="action-card premium-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <a href="{{ url_for('students.add_student') }}" class="btn btn-primary btn-sm action-btn small-btn">
+                                <i class="fas fa-arrow-right me-2"></i>Add Student
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="action-card premium-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <a href="{{ url_for('courses.add_course') }}" class="btn btn-success action-btn small-btn">
+                                <i class="fas fa-arrow-right me-2"></i>Add Course
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="action-card premium-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-plus-square"></i>
+                            </div>
+                            <a href="{{ url_for('results.add_result') }}" class="btn btn-warning action-btn small-btn">
+                                <i class="fas fa-arrow-right me-2"></i>Add Result
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="action-card premium-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <a href="{{ url_for('results.list_results') }}" class="btn btn-info action-btn small-btn">
+                                <i class="fas fa-arrow-right me-2"></i>View Results
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6">
+                        <div class="action-card premium-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <a href="#" class="btn btn-secondary action-btn small-btn">
+                                <i class="fas fa-arrow-right me-2"></i>Explore
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity & Notifications Section -->
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="premium-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        <i class="fas fa-clock me-2"></i>
+                        Recent Activity
+                    </h3>
+                    <p class="section-subtitle">Latest updates and system notifications</p>
+                </div>
+
+                <div class="activity-timeline">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h6>Premium Dashboard Activated!</h6>
+                            <p>You now have access to advanced analytics, interactive charts, and premium features.</p>
+                            <small class="text-muted">Just now</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h6>Welcome to SRMS!</h6>
+                            <p>You've successfully logged into the premium system. Start exploring advanced management tools.</p>
+                            <small class="text-muted">Just now</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h6>Analytics Updated</h6>
+                            <p>Performance charts and statistics have been refreshed with the latest data.</p>
+                            <small class="text-muted">2 minutes ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="col-lg-4">
+            <div class="premium-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        <i class="fas fa-bell me-2"></i>
+                        Notifications
+                    </h3>
+                    <p class="section-subtitle">Important updates and alerts</p>
+                </div>
+
+                <div class="notification-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h6>Premium Features Unlocked</h6>
+                            <p>Enjoy advanced analytics and premium dashboard</p>
+                            <small class="text-muted">Now</small>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h6>System Maintenance</h6>
+                            <p>Scheduled maintenance completed successfully</p>
+                            <small class="text-muted">1 hour ago</small>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h6>Backup Completed</h6>
+                            <p>Daily backup process finished without errors</p>
+                            <small class="text-muted">6 hours ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
