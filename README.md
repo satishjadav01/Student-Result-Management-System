@@ -123,9 +123,18 @@ student-result-management-system/
 
 ## Screenshots
 
-##  Login Page 
+##  1. Login Page 
 <img width="1915" height="869" alt="Screenshot 2025-10-25 202803" src="https://github.com/user-attachments/assets/30d7afc8-2ac3-434f-af0b-89afc58665ac" />
-
+## 2. Sign Up Page
+<img width="1915" height="864" alt="Screenshot 2025-10-25 204108" src="https://github.com/user-attachments/assets/401a251c-bcff-4547-a897-db1745298b0a" />
+## 3. Dashbord Pages
+<img width="1919" height="870" alt="Screenshot 2025-10-25 204257" src="https://github.com/user-attachments/assets/97a44f3f-1b77-4de9-ac8d-19c69ebeb20b" />
+## 4. Student Result
+<img width="1919" height="867" alt="Screenshot 2025-10-25 204417" src="https://github.com/user-attachments/assets/d3d7907c-95d9-4b9a-9ba2-dd0777f943a4" />
+## 5. Students
+<img width="1916" height="864" alt="Screenshot 2025-10-25 204401" src="https://github.com/user-attachments/assets/96d7f8dc-7f1b-48cf-b6b0-f9a9014aab3a" />
+## 6. Courses
+<img width="1917" height="859" alt="Screenshot 2025-10-25 204340" src="https://github.com/user-attachments/assets/867d81bd-83dc-4240-9179-d8d635e7ad5a" />
 
 ## Support
 
