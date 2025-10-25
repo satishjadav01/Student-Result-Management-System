@@ -63,7 +63,7 @@ A comprehensive web application built with Flask for managing student informatio
    ```
 
 2. **Access the application:**
-   Open your browser and navigate to `http://127.0.0.1:5000`
+   Open your browser and navigate to `http://127.0.0.1:5000/auth/login`
 
 3. **First Time Setup:**
    - Visit the signup page to create an admin account
@@ -120,13 +120,12 @@ student-result-management-system/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Screenshots
 
 *Add screenshots of your application here*
+<img width="1915" height="869" alt="Screenshot 2025-10-25 202803" src="https://github.com/user-attachments/assets/30d7afc8-2ac3-434f-af0b-89afc58665ac" />
+
 
 ## Support
 
